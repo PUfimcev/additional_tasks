@@ -187,14 +187,14 @@ echo "</br>";
 function check_multy(array $data)
 {
     if(count($data) < 1) return;
-    $num_1 = $data["number_1"];
-    $num_2 = $data["number_2"];
-    $result = $data["result"];
-
-    if(empty($num_1) || empty($num_2) || empty($result)) {
+    
+    if(empty($data["number_1"]) || empty($data["number_2"]) || empty($data["result"])) {
         echo "<p>Enter all data!</p>";
     } else {
-
+        $num_1 = $data["number_1"];
+        $num_2 = $data["number_2"];
+        $result = $data["result"];
+        
         $true_result = +$num_1 * +$num_2;
     
         echo "The right result $true_result. " . "<strong>" .(+$result === $true_result ? "A good job!" : "You should learn more.") . "</strong>";
